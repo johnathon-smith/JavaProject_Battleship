@@ -29,10 +29,10 @@ public class Ship {
 
     public void setCoordinates(String firstCoordinate, String secondCoordinate) {
         char firstRow = firstCoordinate.charAt(0);
-        int firstColumn = Main.convertStringToInt(firstCoordinate.substring(1));
+        int firstColumn = Game.convertStringToInt(firstCoordinate.substring(1));
         int firstRowIndex = firstRow - 'A' + 1;
         char secondRow = secondCoordinate.charAt(0);
-        int secondColumn = Main.convertStringToInt(secondCoordinate.substring(1));
+        int secondColumn = Game.convertStringToInt(secondCoordinate.substring(1));
 
         for (int i = 0; i < this.size; i++) {
             for (int j = 0; j < 2; j++) {
@@ -57,10 +57,10 @@ public class Ship {
 
     public boolean isPositionValid(String firstCoordinate, String secondCoordinate, String[][] playField) {
         char firstRow = firstCoordinate.charAt(0);
-        int firstColumn = Main.convertStringToInt(firstCoordinate.substring(1));
+        int firstColumn = Game.convertStringToInt(firstCoordinate.substring(1));
         int firstRowIndex = firstRow - 'A' + 1;
         char secondRow = secondCoordinate.charAt(0);
-        int secondColumn = Main.convertStringToInt(secondCoordinate.substring(1));
+        int secondColumn = Game.convertStringToInt(secondCoordinate.substring(1));
         int secondRowIndex = secondRow - 'A' + 1;
 
         //Verify that the coordinates are in either a straight horizontal or vertical line
