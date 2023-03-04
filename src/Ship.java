@@ -2,6 +2,7 @@ public class Ship {
     private String name;
     private int size;
     private int[][] coordinates;
+    private int health;
     private boolean sunk;
 
     public Ship (String name, int size) {
@@ -9,6 +10,7 @@ public class Ship {
         this.size = size;
         this.sunk = false;
         this.coordinates = new int[this.size][2];
+        this.health = this.size;
     }
 
     public String getName() {
@@ -18,13 +20,19 @@ public class Ship {
     public int getSize() {
         return this.size;
     }
+    public int[][] getCoordinates() { return this.coordinates; }
 
     public boolean isSunk() {
         return this.sunk;
     }
 
-    public void setSunk() {
-        this.sunk = true;
+    public void damageShip() {
+        this.health -= 1;
+
+        //check if ship is sunk
+        if (this.health == 0) {
+            this.sunk = true;
+        }
     }
 
     public void setCoordinates(String firstCoordinate, String secondCoordinate) {
